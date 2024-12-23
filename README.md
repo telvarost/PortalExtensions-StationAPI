@@ -11,8 +11,8 @@ A StationAPI mod for Minecraft Beta 1.7.3 that adds modern Minecraft portal size
 
 ## Recipes Can Be Added via Config
 
-![nether portal craft recipe](https://github.com/telvarost/PortalExtensions-StationAPI/blob/main/images/NetherPortalRecipe.PNG)
-![fire craft recipe](https://github.com/telvarost/PortalExtensions-StationAPI/blob/main/images/FireRecipe.PNG)
+![nether portal craft recipe](https://github.com/telvarost/PortalExtensions-StationAPI/blob/main/images/NetherPortalRecipe.png)
+![fire craft recipe](https://github.com/telvarost/PortalExtensions-StationAPI/blob/main/images/FireRecipe.png)
 
 ## Installation using Prism Launcher
 
