@@ -14,8 +14,38 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(NetherPortalBlock.class)
 public class NetherPortalBlockMixin extends TranslucentBlock {
+
     public NetherPortalBlockMixin(int id, int textureId) {
         super(id, textureId, Material.NETHER_PORTAL, false);
+    }
+
+    @Override
+    public Block setHardness(float hardness) {
+        this.hardness = hardness;
+        if (this.resistance < hardness * 5.0F) {
+            this.resistance = hardness * 5.0F;
+        }
+
+        if (Config.config.disableNetherPortalDisappearance) {
+            if (this.hardness != 0.5F) {
+                this.hardness = 0.5F;
+            }
+        } else if (this.hardness != -1.0F) {
+            this.hardness = -1.0F;
+        }
+
+        return this;
+    }
+
+    @Override
+    public void onPlaced(World world, int x, int y, int z) {
+        if (Config.config.disableNetherPortalDisappearance) {
+            if (this.hardness != 0.5F) {
+                this.hardness = 0.5F;
+            }
+        } else if (this.hardness != -1.0F) {
+            this.hardness = -1.0F;
+        }
     }
 
     @Inject(
@@ -215,6 +245,11 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
             cancellable = true
     )
     public void neighborUpdate(World world, int x, int y, int z, int id, CallbackInfo ci) {
+        if (Config.config.disableNetherPortalDisappearance) {
+            ci.cancel();
+            return;
+        }
+
         if (  (Config.config.allowModernNetherPortalSizes)
            || (Config.config.disableNetherPortalMinimumSize)
         ) {

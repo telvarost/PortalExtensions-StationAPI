@@ -24,6 +24,13 @@ public class Config {
         public Boolean disableNetherPortalMinimumSize = false;
 
         @ConfigEntry(
+                name = "Disable Nether Portal Disappearance",
+                description = "Nether portals act like glass",
+                multiplayerSynced = true
+        )
+        public Boolean disableNetherPortalDisappearance = false;
+
+        @ConfigEntry(
                 name = "Enable Fire Crafting Recipe",
                 description = "Restart required for changes to take effect",
                 multiplayerSynced = true
