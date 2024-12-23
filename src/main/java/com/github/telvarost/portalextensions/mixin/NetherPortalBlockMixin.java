@@ -69,7 +69,9 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
             int emptyBlockPositiveX = x;
             for(int offsetX = 1; offsetX <= 21; offsetX++) {
                 emptyBlockPositiveX++;
-                if (0 != world.getBlockId(x + offsetX, y, z) ) {
+                if (  (0             != world.getBlockId(x + offsetX, y, z))
+                   && (Block.FIRE.id != world.getBlockId(x + offsetX, y, z))
+                ) {
                     isObsidianPositiveX = Block.OBSIDIAN.id == world.getBlockId(emptyBlockPositiveX, y, z);
                     break;
                 }
@@ -78,7 +80,9 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
             int emptyBlockNegativeX = x;
             for(int offsetX = 1; offsetX <= 21; offsetX++) {
                 emptyBlockNegativeX--;
-                if (0 != world.getBlockId(x - offsetX, y, z) ) {
+                if (  (0             != world.getBlockId(x - offsetX, y, z))
+                   && (Block.FIRE.id != world.getBlockId(x - offsetX, y, z))
+                ) {
                     isObsidianNegativeX = Block.OBSIDIAN.id == world.getBlockId(emptyBlockNegativeX, y, z);
                     break;
                 }
@@ -87,7 +91,9 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
             int emptyBlockPositiveY = y;
             for(int offsetY = 1; offsetY <= 21; offsetY++) {
                 emptyBlockPositiveY++;
-                if (0 != world.getBlockId(x, y + offsetY, z) ) {
+                if (  (0             != world.getBlockId(x, y + offsetY, z))
+                   && (Block.FIRE.id != world.getBlockId(x, y + offsetY, z))
+                ) {
                     break;
                 }
             }
@@ -95,7 +101,9 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
             int emptyBlockNegativeY = y;
             for(int offsetY = 1; offsetY <= 21; offsetY++) {
                 emptyBlockNegativeY--;
-                if (0 != world.getBlockId(x, y - offsetY, z) ) {
+                if (  (0             != world.getBlockId(x, y - offsetY, z))
+                   && (Block.FIRE.id != world.getBlockId(x, y - offsetY, z))
+                ) {
                     break;
                 }
             }
@@ -103,7 +111,9 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
             int emptyBlockPositiveZ = z;
             for(int offsetZ = 1; offsetZ <= 21; offsetZ++) {
                 emptyBlockPositiveZ++;
-                if (0 != world.getBlockId(x, y, z + offsetZ) ) {
+                if (  (0             != world.getBlockId(x, y, z + offsetZ))
+                   && (Block.FIRE.id != world.getBlockId(x, y, z + offsetZ))
+                ) {
                     isObsidianPositiveZ = Block.OBSIDIAN.id == world.getBlockId(x, y, emptyBlockPositiveZ);
                     break;
                 }
@@ -112,7 +122,9 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
             int emptyBlockNegativeZ = z;
             for(int offsetZ = 1; offsetZ <= 21; offsetZ++) {
                 emptyBlockNegativeZ--;
-                if (0 != world.getBlockId(x, y, z - offsetZ) ) {
+                if (  (0             != world.getBlockId(x, y, z - offsetZ))
+                   && (Block.FIRE.id != world.getBlockId(x, y, z - offsetZ))
+                ) {
                     isObsidianNegativeZ = Block.OBSIDIAN.id == world.getBlockId(x, y, emptyBlockNegativeZ);
                     break;
                 }
