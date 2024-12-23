@@ -16,16 +16,16 @@ public class Config {
         )
         public Boolean allowModernNetherPortalSizes = true;
 
-        @ConfigEntry(
-                name = "Disable Nether Portal Minimum Size",
-                description = "Allows smaller nether portals than normal",
-                multiplayerSynced = true
-        )
-        public Boolean disableNetherPortalMinimumSize = false;
+//        @ConfigEntry(
+//                name = "Allow Smaller Nether Portal Sizes",
+//                description = "Small nether portals can be created with fire",
+//                multiplayerSynced = true
+//        )
+//        public Boolean allowSmallerNetherPortalSizes = false;
 
         @ConfigEntry(
                 name = "Disable Nether Portal Disappearance",
-                description = "Nether portals act like glass",
+                description = "Nether portals will act like glass",
                 multiplayerSynced = true
         )
         public Boolean disableNetherPortalDisappearance = false;

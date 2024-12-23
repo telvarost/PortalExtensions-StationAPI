@@ -3,14 +3,15 @@
 A StationAPI mod for Minecraft Beta 1.7.3 that adds modern Minecraft portal sizes and other portal tweaks.
 * Mod works on Multiplayer with GlassConfigAPI version 3.0+ used to sync configs!
 
-## List of added recipes
+## Features
 
-* Craftable fire (this also thereby allows crafting chainmail)
-* Craftable nether portal blocks
+* Modern nether portal sizes
+* Ability to disable nether portal disappearance (nether portals will act like glass blocks)
+* Ability to add nether portal crafting recipe (including fire crafting recipe as a necessary component)
 
-## Images of recipes
+## Recipes Can Be Added via Config
 
-### v1.0.0 Recipes
+![nether portal craft recipe](https://github.com/telvarost/PortalExtensions-StationAPI/blob/main/images/NetherPortalRecipe.PNG)
 ![fire craft recipe](https://github.com/telvarost/PortalExtensions-StationAPI/blob/main/images/FireRecipe.PNG)
 
 ## Installation using Prism Launcher

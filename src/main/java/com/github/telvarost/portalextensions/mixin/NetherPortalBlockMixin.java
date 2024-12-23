@@ -21,17 +21,15 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
 
     @Override
     public Block setHardness(float hardness) {
+        if (Config.config.disableNetherPortalDisappearance) {
+            hardness = 0.5F;
+        } else {
+            hardness = -1.0F;
+        }
+
         this.hardness = hardness;
         if (this.resistance < hardness * 5.0F) {
             this.resistance = hardness * 5.0F;
-        }
-
-        if (Config.config.disableNetherPortalDisappearance) {
-            if (this.hardness != 0.5F) {
-                this.hardness = 0.5F;
-            }
-        } else if (this.hardness != -1.0F) {
-            this.hardness = -1.0F;
         }
 
         return this;
@@ -55,7 +53,7 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
     )
     public void create(World world, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
         if (  (  (Config.config.allowModernNetherPortalSizes)
-              || (Config.config.disableNetherPortalMinimumSize)
+              //|| (Config.config.allowSmallerNetherPortalSizes)
               )
            && (world.getBlockId(x, y, z) != this.id)
         ) {
@@ -200,12 +198,12 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
             if (isFrameComplete)
             {
                 /** - Check minimum portal size */
-                if (false == Config.config.disableNetherPortalMinimumSize) {
+                //if (false == Config.config.allowSmallerNetherPortalSizes) {
                     if ((frameWidth < 2) || (frameHeight < 3))
                     {
                         return;
                     }
-                }
+                //}
 
                 /** - Check maximum portal size */
                 if (Config.config.allowModernNetherPortalSizes) {
@@ -251,7 +249,7 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
         }
 
         if (  (Config.config.allowModernNetherPortalSizes)
-           || (Config.config.disableNetherPortalMinimumSize)
+           //|| (Config.config.allowSmallerNetherPortalSizes)
         ) {
             int maxPortalSize = 5;
 
