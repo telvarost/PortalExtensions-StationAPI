@@ -236,9 +236,27 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
                 for(int widthIndex = 1; widthIndex < (frameWidth + 1); ++widthIndex) {
                     for(int heightIndex = 0; heightIndex < frameHeight; ++heightIndex) {
                         if (isAxisX) {
-                            world.setBlock(emptyBlockNegativeX + widthIndex, y + heightIndex, z, Block.NETHER_PORTAL.id);
+                            int blockId = world.getBlockId(emptyBlockNegativeX + widthIndex, y + heightIndex, z);
+                            if (  (0             == blockId)
+                               || (Block.FIRE.id == blockId)
+                            ) {
+                                world.setBlock(emptyBlockNegativeX + widthIndex, y + heightIndex, z, Block.NETHER_PORTAL.id);
+                            } else {
+                                world.pauseTicking = false;
+                                world.notifyNeighbors(emptyBlockNegativeX + widthIndex, y + heightIndex, z, blockId);
+                                return;
+                            }
                         } else {
-                            world.setBlock(x, y + heightIndex, emptyBlockNegativeZ + widthIndex, Block.NETHER_PORTAL.id);
+                            int blockId = world.getBlockId(x, y + heightIndex, emptyBlockNegativeZ + widthIndex);
+                            if (  (0             == blockId)
+                               || (Block.FIRE.id == blockId)
+                            ) {
+                                world.setBlock(x, y + heightIndex, emptyBlockNegativeZ + widthIndex, Block.NETHER_PORTAL.id);
+                            } else {
+                                world.pauseTicking = false;
+                                world.notifyNeighbors(x, y + heightIndex, emptyBlockNegativeZ + widthIndex, blockId);
+                                return;
+                            }
                         }
                     }
                 }
