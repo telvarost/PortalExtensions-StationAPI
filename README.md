@@ -17,7 +17,7 @@ A StationAPI mod for Minecraft Beta 1.7.3 that adds modern Minecraft portal size
 ## Installation using Prism Launcher
 
 1. Download an instance of Babric for Prism Launcher: https://github.com/Glass-Series/babric-prism-instance
-2. Install Java 17, set the instance to use it, and disable compatibility checks on the instance: https://adoptium.net/temurin/releases/
+2. Install Java 17 and set the instance to use it: https://adoptium.net/temurin/releases/
 3. Add StationAPI to the mod folder for the instance: https://modrinth.com/mod/stationapi
 4. Add Mod Menu to the mod folder for the instance: https://modrinth.com/mod/modmenu-beta
 5. Add GlassConfigAPI 3.0.1+ to the mod folder for the instance: https://modrinth.com/mod/glass-config-api
