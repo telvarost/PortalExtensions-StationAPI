@@ -35,12 +35,12 @@
   ],
 
   "depends": {
-    "minecraft": "1.0.0-beta.7.3",
-    "gcapi3": ">=3.0.1",
-    "stationapi": "*"
+    "minecraft": "1.0.0-beta.7.3"
   },
 
   "recommends": {
+    "stationapi": ">=2.0.0-alpha.3",
+    "gcapi3": ">=3.0.2",
     "modmenu": "*"
   }
 }
