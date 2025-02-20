@@ -24,13 +24,6 @@ public class Config {
 //        public Boolean allowSmallerNetherPortalSizes = false;
 
         @ConfigEntry(
-                name = "Disable Nether Portal Disappearance",
-                description = "Nether portals will act like glass",
-                multiplayerSynced = true
-        )
-        public Boolean disableNetherPortalDisappearance = false;
-
-        @ConfigEntry(
                 name = "Enable Fire Crafting Recipe",
                 description = "Restart required for changes to take effect",
                 multiplayerSynced = true
@@ -43,5 +36,12 @@ public class Config {
                 multiplayerSynced = true
         )
         public Boolean enableNetherPortalRecipe = false;
+
+        @ConfigEntry(
+                name = "Portal Blocks Remain And Act Like Glass",
+                description = "Restart required for changes to take effect",
+                multiplayerSynced = true
+        )
+        public Boolean portalBlocksRemainAndActLikeGlass = false;
     }
 }

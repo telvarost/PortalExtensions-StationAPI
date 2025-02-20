@@ -21,7 +21,7 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
 
     @Override
     public Block setHardness(float hardness) {
-        if (Config.config.disableNetherPortalDisappearance) {
+        if (Config.config.portalBlocksRemainAndActLikeGlass) {
             hardness = 0.5F;
         } else {
             hardness = -1.0F;
@@ -37,7 +37,7 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
 
     @Override
     public void onPlaced(World world, int x, int y, int z) {
-        if (Config.config.disableNetherPortalDisappearance) {
+        if (Config.config.portalBlocksRemainAndActLikeGlass) {
             if (this.hardness != 0.5F) {
                 this.hardness = 0.5F;
             }
@@ -273,7 +273,7 @@ public class NetherPortalBlockMixin extends TranslucentBlock {
             cancellable = true
     )
     public void neighborUpdate(World world, int x, int y, int z, int id, CallbackInfo ci) {
-        if (Config.config.disableNetherPortalDisappearance) {
+        if (Config.config.portalBlocksRemainAndActLikeGlass) {
             ci.cancel();
             return;
         }
