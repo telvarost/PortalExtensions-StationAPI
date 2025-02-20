@@ -1,6 +1,6 @@
-# PortalExtensions StationAPI Edition for Minecraft Beta 1.7.3
+# PortalExtensions StationAPI for Minecraft Beta 1.7.3
 
-A StationAPI mod for Minecraft Beta 1.7.3 that adds modern Minecraft portal sizes and other portal tweaks.
+A babric mod for Minecraft Beta 1.7.3 that adds modern Minecraft portal sizes and other portal tweaks.
 * Mod works on Multiplayer with GlassConfigAPI version 3.0+ used to sync configs!
 
 ## Features
